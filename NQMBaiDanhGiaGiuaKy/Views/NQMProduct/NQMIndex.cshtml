@@ -1,0 +1,57 @@
+﻿@model IEnumerable<LvhBaiDanhGiaGiuaKy.Models.LvhProduct>
+
+@{
+    ViewBag.Title = "LvhIndex";
+}
+
+<h2>LvhIndex</h2>
+
+<p>
+    @Html.ActionLink("LVH: Create New", "LvhCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LvhFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LvhImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LvhQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LvhPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LvhIsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LvhFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LvhImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LvhQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LvhPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LvhIsActive)
+        </td>
+        <td>
+            @Html.ActionLink("LVH: Edit", "LvhEdit", new { id=item.LvhId }) |
+            @Html.ActionLink("LVH: Details", "LvhDetails", new { id=item.LvhId }) |
+            @Html.ActionLink("LVH: Delete", "LvhDelete", new { id=item.LvhId })
+        </td>
+    </tr>
+}
+
+</table>
